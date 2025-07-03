@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totake <totake@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 10:18:23 by totake            #+#    #+#             */
-/*   Updated: 2025/07/03 15:17:43 by totake           ###   ########.fr       */
+/*   Created: 2025/07/03 17:39:51 by totake            #+#    #+#             */
+/*   Updated: 2025/07/03 17:40:50 by totake           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	free_stack(t_stack *stack)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_node	*cur;
-	t_node	*next;
-
-	cur = stack->top;
-	while (cur)
+	while (*s1 && *s2 && *s1 == *s2)
 	{
-		next = cur->next;
-		free(cur);
-		cur = next;
+		s1++;
+		s2++;
 	}
-	stack->top = NULL;
-	stack->bottom = NULL;
-	stack->size = 0;
-}
-
-void	free_all(t_stack *a, t_stack *b, int *arr, int *ranks)
-{
-	if (arr)
-		free(arr);
-	if (ranks)
-		free(ranks);
-	if (a)
-		free_stack(a);
-	if (b)
-		free_stack(b);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

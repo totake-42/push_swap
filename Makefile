@@ -5,41 +5,29 @@ CFLAGS	= -Wall -Wextra -Werror
 # ==== Project ====
 NAME	= push_swap
 
-# ==== Libft ====
-LIBFT_DIR	= libft
-LIBFT_A		= $(LIBFT_DIR)/libft.a
-
 # ==== Source Files ====
-SRCS	= main.c radix_sort.c stack_ops.c stack_utils.c input_utils.c error.c free.c
+SRCS	= main.c radix_sort.c stack_ops.c stack_utils.c ranks_utils.c error.c free.c small_sort.c ft_strcmp.c ft_atoi.c
 OBJS	= $(SRCS:.c=.o)
 
 # ==== Includes ====
-INCLUDES = -I. -I$(LIBFT_DIR)
+INCLUDES = -I.
 
 # ==== Rules ====
 
 all: $(NAME)
 
-$(NAME): $(LIBFT_A) $(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBFT_A) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(LIBFT_A):
-	make -C $(LIBFT_DIR)
-
 clean:
-	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJS)
 
 fclean: clean
-	make -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
 re: fclean all
 
-# bonus:
-# 	make -C $(LIBFT_DIR) bonus
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

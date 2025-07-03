@@ -1,0 +1,4 @@
+push_swap
+*.o
+*.log
+*test*
