@@ -1,6 +1,8 @@
 # ==== Compiler ====
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
+# CC		= clang
+# CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=leak
 
 # ==== Project ====
 NAME	= push_swap
