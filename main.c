@@ -6,7 +6,7 @@
 /*   By: totake <totake@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 18:54:49 by totake            #+#    #+#             */
-/*   Updated: 2025/07/03 18:41:12 by totake           ###   ########.fr       */
+/*   Updated: 2025/07/05 14:49:54 by totake           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 		push_top(&data.a, create_node(data.ranks[i], &data));
 		i--;
 	}
-	if (size <= 5)
+	if (size <= 20)
 		sort_small(&data.a, &data.b);
 	else
 		radix_sort(&data.a, &data.b);

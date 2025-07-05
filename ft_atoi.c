@@ -6,7 +6,7 @@
 /*   By: totake <totake@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:44:11 by totake            #+#    #+#             */
-/*   Updated: 2025/07/03 17:44:14 by totake           ###   ########.fr       */
+/*   Updated: 2025/07/05 17:21:25 by totake           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_isspace(const char *str, int *i)
 	}
 }
 
-int	ft_isdigit(int c)
+static int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

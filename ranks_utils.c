@@ -6,14 +6,14 @@
 /*   By: totake <totake@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 19:09:12 by totake            #+#    #+#             */
-/*   Updated: 2025/07/03 15:41:07 by totake           ###   ########.fr       */
+/*   Updated: 2025/07/05 17:24:45 by totake           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-int	*copy_array(int *arr, int size)
+static int	*copy_array(int *arr, int size)
 {
 	int	*iarr;
 	int	i;
@@ -30,7 +30,7 @@ int	*copy_array(int *arr, int size)
 	return (iarr);
 }
 
-void	selection_sort(int *arr, int size)
+static void	selection_sort(int *arr, int size)
 {
 	int	i;
 	int	j;
@@ -54,11 +54,12 @@ void	selection_sort(int *arr, int size)
 	}
 }
 
-int	*build_ranks(int *arr, int *sorted, int size)
+static int	*build_ranks(int *arr, int *sorted, int size)
 {
 	int	*ranks;
+	int	i;
+	int	j;
 
-	int i, j;
 	ranks = (int *)malloc(sizeof(int) * size);
 	if (!ranks)
 		return (NULL);

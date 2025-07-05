@@ -2,3 +2,6 @@ push_swap
 *.o
 *.log
 *test*
+checker
+checker_Mac
+test_error_handling.sh

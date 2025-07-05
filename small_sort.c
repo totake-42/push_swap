@@ -6,13 +6,13 @@
 /*   By: totake <totake@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 19:38:20 by totake            #+#    #+#             */
-/*   Updated: 2025/07/03 16:15:27 by totake           ###   ########.fr       */
+/*   Updated: 2025/07/05 17:15:20 by totake           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack *a)
+static void	sort_three(t_stack *a)
 {
 	int	x;
 	int	y;
@@ -39,7 +39,7 @@ void	sort_three(t_stack *a)
 		rra(a);
 }
 
-int	get_min_index(t_stack *a)
+static int	get_min_index(t_stack *a)
 {
 	t_node	*cur;
 	int		min;
@@ -63,7 +63,7 @@ int	get_min_index(t_stack *a)
 	return (min_index);
 }
 
-void	rotate_to_min_top(t_stack *a, int min_index)
+static void	rotate_to_min_top(t_stack *a, int min_index)
 {
 	if (min_index <= a->size / 2)
 		while (min_index-- > 0)
@@ -84,7 +84,7 @@ void	sort_small(t_stack *a, t_stack *b)
 		sa(a);
 	else if (a->size == 3)
 		sort_three(a);
-	else if (a->size <= 5)
+	else if (a->size <= 20)
 	{
 		while (a->size > 3)
 		{
