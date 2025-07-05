@@ -1,7 +1,7 @@
 # ==== Compiler ====
 CC		= cc
-# CFLAGS	= -Wall -Wextra -Werror
-CFLAGS	= -g -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
+# CFLAGS	= -g -Wall -Wextra -Werror
 
 # ==== Project ====
 NAME	= push_swap
